@@ -1,3 +1,34 @@
 <resources>
-    <string name="app_name">Bambam</string>
+    <string name="app_name">BambamApp</string>
+    <string name="bambam_titulo">BAMBAM</string>
+    <string name="academy">academy</string>
+    <string name="cadastro">CADASTRO</string>
+    <string name="name">Nome</string>
+    <string name="cellphone">Celular</string>
+    <string name="gender">Sexo</string>
+    <string name="famele">Feminino</string>
+    <string name="male">Masculino</string>
+    <string name="exercise">Exercício</string>
+    <string name="day_of_exercises">Dias de treino</string>
+    <string name="monday">Segunda-feira</string>
+    <string name="tuesday">Terça-feira</string>
+    <string name="wednesday">Quarta-feira</string>
+    <string name="thursday">Quinta-feira</string>
+    <string name="friday">Sexta-feira</string>
+    <string name="saturday">Sábado</string>
+    <string name="clear">Limpar</string>
+    <string name="next">Boraaaaaa</string>
+    <string name="gym">Academia</string>
+    <string name="treino">Treino</string>
+    <string name="joao_silva">João Silva</string>
+    <string name="no_select_gender">Nenhum sexo foi selecionado</string>
+    <string name="no_select_option">Nenhum opção foi selecionado</string>
+    <string name="cell_number">(XX) 9XXXX-XXXX</string>
+    <string name="clear_message">Itens limpos</string>
+    <string-array name="training_array">
+        <item>Atividades Fisicas</item>
+        <item>Musculação</item>
+        <item>Crossfit</item>
+        <item>Zumba</item>
+    </string-array>
 </resources>
