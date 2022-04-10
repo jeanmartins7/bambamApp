@@ -28,8 +28,12 @@
     <string name="name_clean">Nome em branco</string>
     <string name="cell_clean">Telefone em branco</string>
     <string name="gender_clean">Escolha um sexo</string>
+    <string name="checkbox_clean">Escolha pelo menos um dia para treinar</string>
+    <string name="days_checked">Dias de treinos: </string>
+    <string name="training_spinner">Atividades</string>
+    <string name="select_training">Escolha uma atividade</string>
     <string-array name="training_array">
-        <item>Atividades Fisicas</item>
+        <item>Atividades</item>
         <item>Musculação</item>
         <item>Crossfit</item>
         <item>Zumba</item>

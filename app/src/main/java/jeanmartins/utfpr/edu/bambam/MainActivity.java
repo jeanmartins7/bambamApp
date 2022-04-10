@@ -16,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText editTextNome, editTextCell;
     private CheckBox cbMonday, cbTuesday, cbWednesday, cbThursday, cbFriday, cbSaturday;
     private RadioGroup radioGroupGender;
+    private Spinner spinner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void startSpinner(){
-        Spinner spinner = (Spinner) findViewById(R.id.training_spinner);
+        spinner = (Spinner) findViewById(R.id.training_spinner);
 
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
                 R.array.training_array, android.R.layout.simple_spinner_item);
@@ -81,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
         return cellNumber;
     }
 
-    public String getRadioGroupGender(){
+    private String getRadioGroupGender(){
         String typeGender = "";
 
         switch (radioGroupGender.getCheckedRadioButtonId()){
@@ -102,6 +103,35 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return typeGender;
+    }
+
+    private String getCheckbox(){
+        String checkBox = getString(R.string.days_checked)  + "\n";
+        if(!cbMonday.isChecked() && !cbTuesday.isChecked() && !cbWednesday.isChecked()&&
+                !cbThursday.isChecked() && !cbFriday.isChecked() && !cbSaturday.isChecked()){
+            Toast.makeText(this, R.string.checkbox_clean, Toast.LENGTH_SHORT).show();
+            checkBox = "";
+        }
+        if(cbMonday.isChecked()){checkBox += getString(R.string.monday) + "\n";}
+        if(cbTuesday.isChecked()){checkBox += getString(R.string.tuesday) + "\n";}
+        if(cbWednesday.isChecked()){checkBox += getString(R.string.wednesday) + "\n";}
+        if(cbThursday.isChecked()){checkBox += getString(R.string.thursday) + "\n";}
+        if(cbFriday.isChecked()){checkBox += getString(R.string.friday) + "\n";}
+        if(cbSaturday.isChecked()){checkBox += getString(R.string.saturday) + "\n";}
+
+        return checkBox;
+
+    }
+
+    private String getSpinner(){
+        String training = (String) spinner.getSelectedItem();
+
+        if (training.equals(getString(R.string.training_spinner))){
+            Toast.makeText(this, R.string.select_training, Toast.LENGTH_SHORT).show();
+            training = "";
+        }
+
+        return training;
     }
 
     private void clearEditText(){
@@ -135,20 +165,20 @@ public class MainActivity extends AppCompatActivity {
         String cell = getTextEditCellNumber();
         String name = getTextEditName();
         String gender = getRadioGroupGender();
+        String checkBox = getCheckbox();
+        String spinner = getSpinner();
 
-        if(!name.isEmpty() && !cell.isEmpty() && !gender.isEmpty()){
-            String message = "nome: " + name + "\n" + "celular: " + cell + "\n" + gender + "\n";
+        if(!name.isEmpty() && !cell.isEmpty() && !gender.isEmpty() && !checkBox.equals("")
+                && !spinner.equals("")){
+            String message = "nome: " + name + "\n" + "celular: " + cell + "\n" + gender + "\n"
+                    + checkBox + "\n" + spinner + "\n";
 
             Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
         }
     }
 
     private boolean validateTextEdit(String string){
-        boolean verify = true;
-        if (string.isEmpty()){
-            verify = false;
-        }
-        return verify;
+        return !string.isEmpty();
     }
 
 }
