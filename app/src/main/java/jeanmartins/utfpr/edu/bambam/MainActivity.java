@@ -35,9 +35,11 @@ public class MainActivity extends AppCompatActivity {
         switch (radioGroupGender.getCheckedRadioButtonId()){
             case R.id.radioButtonFamale:
                 typeGender = "Feminino";
+                break;
 
             case R.id.radioButtonMale:
                 typeGender = "Masculino";
+                break;
         }
 
         return typeGender;
@@ -73,6 +75,29 @@ public class MainActivity extends AppCompatActivity {
         cbSaturday = findViewById(R.id.checkBoxSaturday);
     }
 
+    private String getTextEditName(){
+        String name = editTextNome.getText().toString();
+        boolean verify = validateTextEdit(name);
+
+        if(!verify){
+            editTextNome.requestFocus();
+            Toast.makeText(this, R.string.name_clean, Toast.LENGTH_SHORT).show();
+        }
+
+        return name;
+    }
+
+    private String getTextEditCellNumber(){
+        String cellNumber = editTextCell.getText().toString();
+        boolean verify = validateTextEdit(cellNumber);
+        if(!verify){
+            editTextCell.requestFocus();
+            Toast.makeText(this, R.string.cell_clean, Toast.LENGTH_SHORT).show();
+        }
+
+        return cellNumber;
+    }
+
     private void clearEditText(){
         editTextCell.setText(null);
         editTextNome.setText(null);
@@ -100,8 +125,22 @@ public class MainActivity extends AppCompatActivity {
         Toast.makeText(this, R.string.clear_message, Toast.LENGTH_SHORT).show();
     }
 
-    public void cadastrar(View view){
+    public void saveItems(View view){
+        String cell = getTextEditCellNumber();
+        String name = getTextEditName();
 
-        getRadioGroupGender();
+        if(!name.isEmpty() && !cell.isEmpty()){
+            String message = "nome: " + name + "\n" + "celular: " + cell + "\n";
+
+            Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    private boolean validateTextEdit(String string){
+        boolean verify = true;
+        if (string.isEmpty()){
+            verify = false;
+        }
+        return verify;
     }
 }

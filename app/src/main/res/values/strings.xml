@@ -25,6 +25,8 @@
     <string name="no_select_option">Nenhum opção foi selecionado</string>
     <string name="cell_number">(XX) 9XXXX-XXXX</string>
     <string name="clear_message">Itens limpos</string>
+    <string name="name_clean">Nome em branco</string>
+    <string name="cell_clean">Telefone em branco</string>
     <string-array name="training_array">
         <item>Atividades Fisicas</item>
         <item>Musculação</item>
