@@ -29,23 +29,6 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public String getRadioGroupGender(){
-        String typeGender = "";
-
-        switch (radioGroupGender.getCheckedRadioButtonId()){
-            case R.id.radioButtonFamale:
-                typeGender = "Feminino";
-                break;
-
-            case R.id.radioButtonMale:
-                typeGender = "Masculino";
-                break;
-        }
-
-        return typeGender;
-    }
-
-
     private void startEditText(){
         editTextNome = findViewById(R.id.inputName);
         editTextCell = findViewById(R.id.inputCell);
@@ -98,6 +81,29 @@ public class MainActivity extends AppCompatActivity {
         return cellNumber;
     }
 
+    public String getRadioGroupGender(){
+        String typeGender = "";
+
+        switch (radioGroupGender.getCheckedRadioButtonId()){
+            case R.id.radioButtonFamale:
+                typeGender = "Feminino";
+                break;
+
+            case R.id.radioButtonMale:
+                typeGender = "Masculino";
+                break;
+        }
+
+        boolean verify = validateTextEdit(typeGender);
+
+        if(!verify){
+            radioGroupGender.requestFocus();
+            Toast.makeText(this, R.string.gender_clean, Toast.LENGTH_SHORT).show();
+        }
+
+        return typeGender;
+    }
+
     private void clearEditText(){
         editTextCell.setText(null);
         editTextNome.setText(null);
@@ -128,9 +134,10 @@ public class MainActivity extends AppCompatActivity {
     public void saveItems(View view){
         String cell = getTextEditCellNumber();
         String name = getTextEditName();
+        String gender = getRadioGroupGender();
 
-        if(!name.isEmpty() && !cell.isEmpty()){
-            String message = "nome: " + name + "\n" + "celular: " + cell + "\n";
+        if(!name.isEmpty() && !cell.isEmpty() && !gender.isEmpty()){
+            String message = "nome: " + name + "\n" + "celular: " + cell + "\n" + gender + "\n";
 
             Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
         }
@@ -143,4 +150,5 @@ public class MainActivity extends AppCompatActivity {
         }
         return verify;
     }
+
 }

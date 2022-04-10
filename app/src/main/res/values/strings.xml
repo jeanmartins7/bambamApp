@@ -27,6 +27,7 @@
     <string name="clear_message">Itens limpos</string>
     <string name="name_clean">Nome em branco</string>
     <string name="cell_clean">Telefone em branco</string>
+    <string name="gender_clean">Escolha um sexo</string>
     <string-array name="training_array">
         <item>Atividades Fisicas</item>
         <item>Musculação</item>
