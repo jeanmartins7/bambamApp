@@ -3,9 +3,9 @@
     <string name="bambam_titulo">BAMBAM</string>
     <string name="academy">academy</string>
     <string name="cadastro">CADASTRO</string>
-    <string name="name">Nome</string>
-    <string name="cellphone">Celular</string>
-    <string name="gender">Sexo</string>
+    <string name="name">Nome </string>
+    <string name="cellphone">Celular </string>
+    <string name="gender">Sexo </string>
     <string name="famele">Feminino</string>
     <string name="male">Masculino</string>
     <string name="exercise">Exercício</string>
@@ -30,7 +30,7 @@
     <string name="gender_clean">Escolha um sexo</string>
     <string name="checkbox_clean">Escolha pelo menos um dia para treinar</string>
     <string name="days_checked">Dias de treinos: </string>
-    <string name="training_spinner">Atividades</string>
+    <string name="training_spinner">Atividades </string>
     <string name="select_training">Escolha uma atividade</string>
     <string-array name="training_array">
         <item>Atividades</item>

@@ -1,4 +1,4 @@
-package jeanmartins.utfpr.edu.bambam;
+package br.edu.utfpr.martins.bambamapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -170,10 +170,12 @@ public class MainActivity extends AppCompatActivity {
 
         if(!name.isEmpty() && !cell.isEmpty() && !gender.isEmpty() && !checkBox.equals("")
                 && !spinner.equals("")){
-            String message = "nome: " + name + "\n" + "celular: " + cell + "\n" + gender + "\n"
-                    + checkBox + "\n" + spinner + "\n";
+            String message = getString(R.string.name) + " :" + name + "\n" +
+                    getString(R.string.cellphone) + " :" + cell + "\n" +
+                    getString(R.string.gender) + " :" + gender + "\n"
+                 + checkBox + "\n" + getString(R.string.training_spinner) + " :" + spinner + "\n";
 
-            Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, message, Toast.LENGTH_LONG).show();
         }
     }
 

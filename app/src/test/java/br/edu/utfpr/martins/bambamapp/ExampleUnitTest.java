@@ -1,4 +1,4 @@
-package jeanmartins.utfpr.edu.bambam;
+package br.edu.utfpr.martins.bambamapp;
 
 import org.junit.Test;
 

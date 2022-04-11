@@ -6,8 +6,8 @@ android {
     compileSdk 32
 
     defaultConfig {
-        applicationId "jeanmartins.utfpr.edu.bambam"
-        minSdk 27
+        applicationId "br.edu.utfpr.martins.bambamapp"
+        minSdk 30
         targetSdk 32
         versionCode 1
         versionName "1.0"

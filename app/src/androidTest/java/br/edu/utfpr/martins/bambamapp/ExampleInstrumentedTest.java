@@ -1,4 +1,4 @@
-package jeanmartins.utfpr.edu.bambam;
+package br.edu.utfpr.martins.bambamapp;
 
 import android.content.Context;
 
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
     public void useAppContext() {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-        assertEquals("jeanmartins.utfpr.edu.bambam", appContext.getPackageName());
+        assertEquals("br.edu.utfpr.martins.bambamapp", appContext.getPackageName());
     }
 }
